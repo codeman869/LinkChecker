@@ -10,7 +10,7 @@ class POL
     headers "User-Agent" => APPNAME
 end
 100.times do
-    response = POL.get('https://www.portlandonline.com/timereq/')
+    response = POL.get('/timereq/')
     if response.code == 404
         puts response.body, response.code, response.message, response.headers.inspect
         f = File.open("POL.log","a+")
